@@ -1,6 +1,7 @@
 resource "local_file" "CIPs" {
     filename = "./manifest_outputcsv"
     content = templatefile("manifest.tftpl", { ip_addrs = module.vm.*.ip })
+    // templatefile("manifest.tftpl", {ip_addrs = ["192.168.0.100", "8.8.8.8", "8.8.4.4"]})
 }
 
 resource "local_file" "AIPs" {
